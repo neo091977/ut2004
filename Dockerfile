@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20:10
 
 ENV UT2004_DIR=/usr/src/ut2004 \
     UT2004_ARCH=64 \
@@ -19,7 +19,6 @@ RUN echo "install packages" \
       libstdc++5 \
       p7zip-full \
  && rm -rf /var/lib/apt/lists/* \
- && echo "install gosu" \
  && gosu nobody true \
  && echo "install modini" \
  && curl --silent --show-error --location --output /usr/local/bin/modini "https://github.com/reflectivecode/modini/releases/download/v0.6.0/modini-amd64" \
