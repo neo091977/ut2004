@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:18.04
 
 ENV UT2004_DIR=/usr/src/ut2004 \
     UT2004_ARCH=64 \
