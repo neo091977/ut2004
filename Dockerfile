@@ -1,8 +1,7 @@
-FROM debian:buster
+FROM ubuntu:bionic
 
 ENV UT2004_DIR=/usr/src/ut2004 \
     UT2004_ARCH=64 \
-    UT2004_UCC32=/usr/src/ut2004/System/ucc-bin \
     UT2004_UCC64=/usr/src/ut2004/System/ucc-bin-linux-amd64 \
     UT2004_HOME=/home/ut2004 \
     UT2004_CMD=CTF-FACECLASSIC?game=XGame.xCTFGame
@@ -16,19 +15,11 @@ RUN echo "install packages" \
       ca-certificates \
       curl \
       tini \
+      gosu \
       libstdc++5 \
-      libstdc++5:i386 \
       p7zip-full \
  && rm -rf /var/lib/apt/lists/* \
- && ##echo "install tini" \
- && ##curl --silent --show-error --location --output /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v0.13.2/tini-amd64" \
- && ##echo "790c9eb6e8a382fdcb1d451f77328f1fac122268fa6f735d2a9f1b1670ad74e3 /usr/local/bin/tini" | sha256sum --check - \
- && ##chmod +x /usr/local/bin/tini \
- && ##tini -s true \
  && echo "install gosu" \
- && curl --silent --show-error --location --output /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64" \
- && echo "5b3b03713a888cee84ecbf4582b21ac9fd46c3d935ff2d7ea25dd5055d302d3c /usr/local/bin/gosu" | sha256sum --check - \
- && chmod +x /usr/local/bin/gosu \
  && gosu nobody true \
  && echo "install modini" \
  && curl --silent --show-error --location --output /usr/local/bin/modini "https://github.com/reflectivecode/modini/releases/download/v0.6.0/modini-amd64" \
@@ -53,7 +44,6 @@ RUN echo "install packages" \
       --output "${UT2004_DIR}/System/UT2004.ini" \
       --modify "[IpDrv.MasterServerUplink];UplinkToGamespy=False;" \
  && cd "${UT2004_DIR}/System" \
- && "${UT2004_UCC32}" \
  && "${UT2004_UCC64}" \
  && echo "done"
 
