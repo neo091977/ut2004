@@ -3,7 +3,7 @@ FROM ubuntu:20.10
 ENV UT2004_DIR=/usr/src/ut2004 \
     UT2004_ARCH=64 \
     UT2004_UCC64=/usr/src/ut2004/System/ucc-bin-linux-amd64 \
-    UT2004_HOME=/home/ut2004 \
+    UT2004_HOME=/home/ \
     UT2004_CMD=CTF-FACECLASSIC?game=XGame.xCTFGame
 
 COPY scripts /usr/bin/
