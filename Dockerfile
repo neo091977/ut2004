@@ -6,7 +6,7 @@ ENV UT2004_DIR=/usr/src/ut2004 \
     UT2004_HOME=/home/ut2004 \
     UT2004_CMD=CTF-FACECLASSIC?game=XGame.xCTFGame
 
-COPY scripts /usr/local/bin/
+COPY scripts /usr/bin/
 
 RUN echo "install packages" \
  && dpkg --add-architecture i386 \
@@ -21,9 +21,9 @@ RUN echo "install packages" \
  && rm -rf /var/lib/apt/lists/* \
  && gosu nobody true \
  && echo "install modini" \
- && curl --silent --show-error --location --output /usr/local/bin/modini "https://github.com/reflectivecode/modini/releases/download/v0.6.0/modini-amd64" \
+ && curl --silent --show-error --location --output /usr/bin/modini "https://github.com/reflectivecode/modini/releases/download/v0.6.0/modini-amd64" \
  && echo "38ce4a2a590ab95d174feebcff38b9fdbb311f138d0bd8855f91196d4d64267b /usr/local/bin/modini" | sha256sum --check - \
- && chmod +x /usr/local/bin/modini \
+ && chmod +x /usr/bin/modini \
  && modini --version \
  && echo "add ut2004 user" \
  && groupadd --system --gid 2000 ut2004 \
@@ -50,6 +50,6 @@ WORKDIR ${UT2004_DIR}/System
 
 EXPOSE 7777/udp 7778/udp 28902 8080
 
-ENTRYPOINT ["/usr/local/bin/tini", "--"]
+ENTRYPOINT ["/usr/bin/tini", "--"]
 
 CMD ["run-root.sh"]
