@@ -1,4 +1,4 @@
-FROM ubuntu:20:10
+FROM ubuntu:20.10
 
 ENV UT2004_DIR=/usr/src/ut2004 \
     UT2004_ARCH=64 \
