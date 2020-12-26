@@ -4,12 +4,10 @@ set -o pipefail
 set -o nounset
 
 if [ "${UT2004_UCC:-}" = "" ]; then
-    if [ "${UT2004_ARCH}" = "32" ]; then
-        export UT2004_UCC=${UT2004_UCC32}
-    elif [ "${UT2004_ARCH}" = "64" ]; then
+    if [ "${UT2004_ARCH}" = "64" ]; then
         export UT2004_UCC=${UT2004_UCC64}
     else
-        echo "UT2004_ARCH must be set to either '32' or '64', but was '${UT2004_ARCH}'"
+        echo "UT2004_ARCH must be set to '64'"
         exit 1
     fi
 fi
