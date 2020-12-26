@@ -12,7 +12,8 @@ for i in `seq 1 100`; do
 
     eval file=\${CONFIG_${i}_FILE:-UT2004.ini}
     eval delimit=\${CONFIG_${i}_DELIMIT:-}
-
+    
+    mkdir -p "${UT2004_HOME}/.ut2004/System/"
     output="${UT2004_HOME}/.ut2004/System/${file}"
 
     if [ -f "${output}" ]; then
