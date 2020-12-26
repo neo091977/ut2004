@@ -37,7 +37,7 @@ RUN echo "install packages" \
     "${UT2004_DIR}" \
  && chown -R root:ut2004 "${UT2004_DIR}" \
  && chmod -R a=,ug=rX "${UT2004_DIR}" \
- && chmod 550 "${UT2004_UCC32}" "${UT2004_UCC64}" \
+ && chmod 550 "${UT2004_UCC64}" \
  && echo "tweak settings" \
  && modini \
       --input "${UT2004_DIR}/System/UT2004.ini" \
