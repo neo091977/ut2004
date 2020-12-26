@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 ENV UT2004_DIR=/usr/src/ut2004 \
-    UT2004_ARCH=32 \
+    UT2004_ARCH=64 \
     UT2004_UCC32=/usr/src/ut2004/System/ucc-bin \
     UT2004_UCC64=/usr/src/ut2004/System/ucc-bin-linux-amd64 \
     UT2004_HOME=/home/ut2004 \
