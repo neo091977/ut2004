@@ -17,6 +17,7 @@ RUN echo "install packages" \
       tini \
       gosu  \
       p7zip-full \
+      libstdc++5.i386 \
  && rm -rf /var/lib/apt/lists/* \
  && gosu nobody true \
  && echo "install modini" \
