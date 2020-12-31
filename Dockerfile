@@ -1,10 +1,10 @@
 FROM ubuntu:20.10
 
-ENV UT2004_DIR=/usr/src/ut2004 \
+ENV UT2004_DIR=/usr/local/games/ut2004 \
     UT2004_ARCH=32 \
-    UT2004_UCC32=/usr/src/ut2004/System/ucc-bin \
+    UT2004_UCC32=/usr/local/games/ut2004/System/ucc-bin \
     UT2004_HOME=/home/ut-user \
-    UT2004_CMD=CTF-FACECLASSIC?game=XGame.xCTFGame
+    UT2004_CMD=DM-Antalus?Game=XGame.xDeathMatch
 
 COPY scripts /usr/bin/
 
