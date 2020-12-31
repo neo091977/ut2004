@@ -30,9 +30,9 @@ RUN echo "install packages" \
  && chmod 750 /home/ut-user
  && echo "install ut2004" \
  && install.sh \
-    https://www.dropbox.com/s/mijyaxho8ktzuxq/dedicatedserver3339-bonuspack-lnxpatch.7z?dl=1 \
-    199093da475daaf9b4d660e551d2040c4cbebb6c \
-    dedicatedserver3339-bonuspack-lnxpatch.7z \
+    https://neo-cloud-server.duckdns.org/s/xPemfgkEDAjNnz6/download \
+    93bd33c1c48735851ea9d0080892f6c2821bd1e2c96eb5d9d37bfaed403d3cd7 \
+    ut2004-dedicated-server-v3369.7z \
     "${UT2004_DIR}" \
  && chown -R ut-user: "${UT2004_DIR}" \
  && chmod -R a=,ug=rX "${UT2004_DIR}" \
