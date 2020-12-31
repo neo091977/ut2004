@@ -21,7 +21,7 @@ echo "Making temp directory ${extract_dir}"
 mkdir --parents "${extract_dir}"
 
 echo "Downloading ${url}"
-curl --silent --show-error --location --output "${download_file}" "${url}"
+curl --silent --show-error -J -O "${url}"
 
 echo "Verifying checksum ${sha1}"
 echo "${sha1} ${download_file}" | sha1sum -c -
