@@ -26,8 +26,8 @@ RUN echo "install packages" \
  && chmod +x /usr/bin/modini \
  && modini --version \
  && echo "add ut-user user" \
- && groupadd --gid 2000 ut-user \
- && useradd --uid 2000 --home-dir "${UT2004_HOME}" --create-home --gid ut-user ut-user \
+ && adduser ut-user --uid 2000 \
+ && chmod 750 /home/ut-user
  && echo "install ut2004" \
  && install.sh \
     https://www.dropbox.com/s/mijyaxho8ktzuxq/dedicatedserver3339-bonuspack-lnxpatch.7z?dl=1 \
