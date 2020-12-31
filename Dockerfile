@@ -37,11 +37,6 @@ RUN echo "install packages" \
  && chown -R ut-user: "${UT2004_DIR}" \
  && chmod -R a=,ug=rX "${UT2004_DIR}" \
  && chmod 550 "${UT2004_UCC32}" \
- && echo "tweak settings" \
- && modini \
-      --input "${UT2004_DIR}/System/UT2004.ini" \
-      --output "${UT2004_DIR}/System/UT2004.ini" \
-      --modify "[IpDrv.MasterServerUplink];UplinkToGamespy=False;" \
  && cd "${UT2004_DIR}/System" \
  && "${UT2004_UCC32}" \
  && echo "done"
